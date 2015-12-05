@@ -19,10 +19,10 @@ public class VentanaPrincipal extends JFrame {
     
 }
 class PanelPrincipal extends JPanel {
-    JLabel lblNombre=new JLabel("Nombre");
-    JTextField txtNombre=new JTextField();
-    JLabel lblApellido=new JLabel("Apellido");
-    JTextField txtApellido=new JTextField();
+    JLabel lblNombre=new JLabel("Numero1");
+    JTextField txtN1=new JTextField();
+    JLabel lblApellido=new JLabel("Numero2");
+    JTextField txtN2=new JTextField();
     JButton btnMostrar=new JButton("Mostrar");
     JButton btnLimpiar=new JButton("Limpiar");
     JTextField lblResultado=new JTextField();
@@ -32,12 +32,12 @@ public PanelPrincipal(){
    this.setLayout(null);
    lblNombre.setBounds(20,20,120,20);
    this.add(lblNombre);
-   txtNombre.setBounds(150,20,120,20);
-   this.add(txtNombre);
+   txtN1.setBounds(150,20,120,20);
+   this.add(txtN1);
    lblApellido.setBounds(20,50,120,20);
    this.add(lblApellido);
-   txtApellido.setBounds(150,50,120,20);
-   this.add(txtApellido);
+   txtN2.setBounds(150,50,120,20);
+   this.add(txtN2);
    btnMostrar.setBounds(20,80,120,20);
    this.add(btnMostrar);
    btnLimpiar.setBounds(150,80,120,20);
@@ -56,14 +56,17 @@ public PanelPrincipal(){
     }
     class Oyente implements ActionListener{
         public void actionPerformed(ActionEvent e){
-            System.out.println("PRESIONO BOTON");
-            txtResultado.setText(""+txtNombre.getText()+""+txtApellido.getText());
+            int n1=Integer.parseInt(txtN1.getText());
+            int n2=Integer.parseInt(txtN2.getText());
+            int resultado=n1*n2;
+            txtResultado.setText(""+resultado);
+            
         }
     }
         class Oyente2 implements ActionListener{
             public void actionPerformed(ActionEvent e){
-                txtNombre.setText("");
-                txtApellido.setText("");
+                txtN1.setText("");
+                txtN2.setText("");
             
         }
     }
