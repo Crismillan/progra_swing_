@@ -53,6 +53,7 @@ public PanelPrincipal(){
     class Oyente implements ActionListener{
         public void actionPerformed(ActionEvent e){
             System.out.println("PRESIONO BOTON");
+            txtResultado.setText(""+txtNombre.getText()+""+txtApellido.getText());
         }
     }
 
@@ -63,7 +64,7 @@ public PanelPrincipal(){
     
     
 }
-}
+
 
 
 
