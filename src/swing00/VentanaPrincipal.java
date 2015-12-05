@@ -2,6 +2,8 @@
 package swing00;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class VentanaPrincipal extends JFrame {
@@ -21,17 +23,40 @@ class PanelPrincipal extends JPanel {
     JTextField txtNombre=new JTextField();
     JLabel lblApellido=new JLabel("Apellido");
     JTextField txtApellido=new JTextField();
-    JButton btnMostrar=new JButton("Mostar");
+    JButton btnMostrar=new JButton("Mostrar");
     JButton btnLimpiar=new JButton("Limpiar");
+    JTextField lblResultado=new JTextField();
+    JLabel txtResultado=new JLabel("Resultado");
     
 public PanelPrincipal(){
-    this.setLayout(new GridLayout(3,2));
-    this.add(lblNombre);
-    this.add(txtNombre);
-    this.add(lblApellido);
-    this.add(txtApellido);
-    this.add(btnMostrar);
-    this.add(btnLimpiar);
+   this.setLayout(null);
+   lblNombre.setBounds(20,20,120,20);
+   this.add(lblNombre);
+   txtNombre.setBounds(150,20,120,20);
+   this.add(txtNombre);
+   lblApellido.setBounds(20,50,120,20);
+   this.add(lblApellido);
+   txtApellido.setBounds(150,50,120,20);
+   this.add(txtApellido);
+   btnMostrar.setBounds(20,80,120,20);
+   this.add(btnMostrar);
+   btnLimpiar.setBounds(150,80,120,20);
+   this.add(btnLimpiar);
+   lblResultado.setBounds(20,110,120,20);
+   txtResultado.setBounds(150,110,120,20);
+   this.add(txtResultado);
+   this.add(lblResultado);
+    Oyente o1=new Oyente();
+        btnMostrar.addActionListener(o1);
+        
+    }
+    class Oyente implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+            System.out.println("PRESIONO BOTON");
+        }
+    }
+
+   
     
     
     
